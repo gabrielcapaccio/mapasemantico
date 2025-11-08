@@ -1,0 +1,447 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #fd5068;
+  --secondary-color: #fe4458;
+  --success-color: #00d4a1;
+  --text-dark: #21262e;
+  --text-light: #6c7a89;
+  --bg-light: #f7f7f7;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+/* Navigation */
+.navbar {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Card Deck */
+.card-deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  position: relative;
+}
+
+.profile-card {
+  width: 400px;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: absolute;
+  user-select: none;
+}
+
+.card-image {
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-badge,
+.pass-badge {
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border: 4px solid;
+  border-radius: 10px;
+  transform: rotate(-15deg);
+}
+
+.like-badge {
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.pass-badge {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.card-info {
+  padding: 1.5rem;
+  height: 30%;
+  overflow-y: auto;
+}
+
+.card-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.interest-tag {
+  background: var(--bg-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-pass {
+  background: white;
+  color: var(--primary-color);
+}
+
+.btn-like {
+  background: var(--primary-color);
+  color: white;
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+}
+
+.btn-super-like {
+  background: white;
+  color: #00d4ff;
+}
+
+/* Matches Grid */
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.match-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.match-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.match-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.match-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.match-info p {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+/* Chat */
+.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat-header-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid white;
+}
+
+.chat-header h2 {
+  font-size: 1.3rem;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: var(--bg-light);
+}
+
+.message {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.message.sent .message-bubble {
+  background: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.message.received .message-bubble {
+  background: white;
+  color: var(--text-dark);
+  border-bottom-left-radius: 5px;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+  padding: 0 1rem;
+}
+
+.chat-input {
+  padding: 1.5rem;
+  background: white;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--bg-light);
+  border-radius: 25px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.chat-input input:focus {
+  border-color: var(--primary-color);
+}
+
+.chat-input button {
+  padding: 0.8rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.chat-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.empty-state h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.empty-state-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .profile-card {
+    width: 350px;
+    height: 550px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .matches-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .chat-container {
+    height: calc(100vh - 80px);
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    width: 90vw;
+    height: 500px;
+  }
+
+  .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .btn-like {
+    width: 60px;
+    height: 60px;
+  }
+}
